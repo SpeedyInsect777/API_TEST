@@ -32,4 +32,5 @@ public class Test_02_POJO_Practices extends HrTestBase {
         Employees employeesOne =  jp.getObject("items[2]",Employees.class);
 
         System.out.println(employeesOne.getFirstName());
+
 }}
