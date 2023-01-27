@@ -1,11 +1,15 @@
 package com.cydeo.Day07;
 
+import com.cydeo.Pojo.Spartan;
 import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
 
 /*
      Given accept type is JSON
@@ -40,9 +44,42 @@ public class Test_02_POST_Spartan extends SpartanTestBase {
 
         String message = "A Spartan is Born";
 
-given().accept(ContentType.JSON).
-        and().
-        contentType("application/json").body(newSpartan).when().post("api/spartans/");
+        JsonPath jsonPath = given().accept(ContentType.JSON).
+                and().log().body().
+                contentType("application/json").body(newSpartan).when().post("api/spartans/").
+                then().statusCode(201).extract().jsonPath();
+
+        assertEquals("John Doe",jsonPath.getString("data.name"));
+       assertEquals("Male",jsonPath.getString("data.gender"));
+       assertEquals(8877445596l,jsonPath.getLong("data.phone"));
+        System.out.println("id: "+jsonPath.getInt("data.id"));
+
+    }
+    @DisplayName("POST Spartan with POJO")
+    @Test
+    public void test02(){
+
+        Spartan newSpartan = new Spartan();
+        newSpartan.setName("John Pojo");
+        newSpartan.setGender("Male");
+        newSpartan.setPhone(8877445596l);
+
+
+
+        String message = "A Spartan is Born";
+
+
+
+        JsonPath jsonPath = given().accept(ContentType.JSON).
+                and().log().body().
+                contentType("application/json").
+                body(newSpartan).//   ! ! !  Serialization  ! ! !
+                when().post("api/spartans/").
+                then().statusCode(201).extract().jsonPath();
+
+        assertEquals(newSpartan.getName(),jsonPath.getString("data.name"));
+        assertEquals(newSpartan.getGender(),jsonPath.getString("data.gender"));
+        assertEquals(newSpartan.getPhone(),jsonPath.getLong("data.phone"));
 
 
     }
