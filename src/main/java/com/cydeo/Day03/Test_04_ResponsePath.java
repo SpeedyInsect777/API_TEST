@@ -9,8 +9,8 @@ import static io.restassured.RestAssured.*;
 
 import org.apache.http.HttpStatus;
 import org.apache.http.protocol.HTTP;
-import org.junit.jupiter.api.DisplayName;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.*;
+
 
 import java.util.List;
 
@@ -42,8 +42,7 @@ public class Test_04_ResponsePath extends SpartanTestBase {
 
         System.out.println(response.path("name").toString());
     }
-    @Test
-    public void test02(){
+@Test    public void test02(){
 
 /*
     /* Given Spartan file Content-type Json
@@ -69,8 +68,7 @@ public class Test_04_ResponsePath extends SpartanTestBase {
         System.out.println(obj2);
     }
 
-    @Test
-    public void test03(){
+@Test    public void test03(){
 
         Response response = given().accept(ContentType.JSON).when().get("/api/spartans");
       //  response.prettyPrint();

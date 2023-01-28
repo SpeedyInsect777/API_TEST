@@ -6,8 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.testng.annotations.Test;
-
+import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;

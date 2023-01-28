@@ -3,8 +3,7 @@ package com.cydeo.Day03;
 import com.cydeo.utilities.HrTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.Test;
-
+import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.stream.Collectors;
 

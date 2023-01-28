@@ -19,11 +19,7 @@
         <artifactId>rest-assured</artifactId>
         <version>5.3.0</version>
     </dependency>
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.1.0</version>
-    </dependency>
+
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
@@ -47,8 +43,8 @@
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>RELEASE</version>
-        <scope>compile</scope>
+        <version>5.9.0</version>
+
     </dependency>
 
 
@@ -63,6 +59,7 @@
         <artifactId>lombok</artifactId>
         <version>1.18.24</version>
     </dependency>
+
 </dependencies>
 
 </project>

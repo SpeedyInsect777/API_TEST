@@ -1,11 +1,12 @@
 package com.cydeo.utilities;
 
 import io.restassured.RestAssured;
-import org.testng.annotations.BeforeTest;
+import org.junit.jupiter.api.BeforeAll;
+
 
 public abstract class CydeoAPITestBase {
 
-    @BeforeTest
+    @BeforeAll
     public static void init() {
         RestAssured.baseURI = "https://api.training.cydeo.com";
     }

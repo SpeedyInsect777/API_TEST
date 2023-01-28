@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import org.apache.http.HttpStatus;
 import org.apache.http.protocol.HTTP;
 import org.junit.jupiter.api.DisplayName;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;

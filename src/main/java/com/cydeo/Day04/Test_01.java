@@ -6,8 +6,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
 import org.junit.jupiter.api.DisplayName;
-import org.testng.annotations.Test;
-
+import org.junit.jupiter.api.Test;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.List;

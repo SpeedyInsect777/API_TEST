@@ -5,8 +5,7 @@ import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.testng.annotations.Test;
-
+import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 public class Test_05_JsonPath extends SpartanTestBase {

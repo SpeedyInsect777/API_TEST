@@ -3,8 +3,7 @@ package com.cydeo.Day05;
 import com.cydeo.utilities.HrTestBase;
 import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
-import org.testng.annotations.Test;
-
+import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.util.Asserts.notNull;
 import static org.hamcrest.Matchers.*;

@@ -1,0 +1,82 @@
+/**
+     *  HOMEWORKS
+     *
+     *      Role Based Control Test --> RBAC
+     *
+     *             ADMIN  -->  GET  POST PUT PATCH  DELETE   --> Spartan Flow
+     *             EDITOR -->  GET  POST PUT PATCH   403
+     *             USER   -->  GET  403  403  403    403
+     *             GUEST  -->  401  401  401  401    401
+     *
+     *
+     *   -- Create RBAC Test for all different roles from Spartan Application including with Negative Test cases
+     *   -- Create SpartanUtil Class
+     *             public static Map<String,Object>  SpartanUtil.getRandomSpartan(){
+     *                  Map<String,Object> spartanMap=new HashMap();
+     *                  spartanMap.put("name",faker.funnyName());
+     *
+     *                  use Faker class to create each time differetn spartan information
+     *
+     *                  return spartanMap;
+     *              }
+     *
+     *               public static void  GETSpartans(String role,String password,int statusCode,int id){
+     *
+     *                 given().pathParam("id",id)
+     *                 .auth().basic(role,password).
+     *                 when().delete("/api/spartans/{id}").then().statusCode(statusCode);
+     *
+     *               }
+     *
+     *     Q --> can we create class in utilities class with loop for each user, admin, guest with passport make more dynamic
+     *            - YES we can but what if first user test is failing.
+     *
+     *            - We should do it --> Data Driven Test
+     *
+     *            - JUnit5 DDT to implement
+     *
+     =======================================
+     http://qa.bookit.cydeo.com/sign-in
+     teacher_email    blyst6@si.edu
+     teacher_password    barbabaslyst
+     team_member_email    raymond@cydeo.com
+     team_member_password    abs123
+     team_leader_email    lfinnisz@yolasite.com
+     team_leader_password    lissiefinnis
+===========================================
+Admin pass/userName: admin admin
+Editor pass/userName: editor editor
+User pass/userName: user user
+
+
+
+
+================================
+ // how  you build connection here ?
+    /*
+        Before all will init BASEURI since it is static field for RestAssured
+        when we send any request it will use as BASEURI --> BOOKIT BASEURI
+
+
+     */
+    /*
+
+    if we change the role of the User from teamleader to teacher can we use the same token?
+
+        public static String getTokenByRole(String role){
+
+            String email;
+            String password;
+
+        switch(role){
+
+        case "team-leader":
+
+                email=ConfigurationReader.getProperty("team-leader-email");
+                password =ConfigurationReader.getProperty("team-leader-email")
+                break;
+         case "team-member":
+
+
+
+     */

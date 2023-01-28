@@ -3,7 +3,7 @@ package com.cydeo.Day04;
 import com.cydeo.utilities.ZippopotamTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 

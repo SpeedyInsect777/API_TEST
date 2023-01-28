@@ -5,11 +5,10 @@ import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 
-import org.junit.jupiter.api.DisplayName;
-import org.testng.annotations.Test;
-
+import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.given;
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
+
 
 /*
      Given accept type is JSON

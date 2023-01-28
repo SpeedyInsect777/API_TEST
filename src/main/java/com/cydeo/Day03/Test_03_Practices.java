@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static io.restassured.RestAssured.*;
 
 import org.junit.jupiter.api.DisplayName;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 public class Test_03_Practices extends HrTestBase {
     /*Q1:

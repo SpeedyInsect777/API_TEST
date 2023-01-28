@@ -7,9 +7,9 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.junit.jupiter.api.DisplayName;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.*;;
+
+
 
 import java.util.List;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class Test_01 extends CydeoAPITestBase {
    * Ignore all unnecessary fields*/
 
     @DisplayName("GET /student/{id} 2")
-    @Test
+ @Test
     public void test01(){
     JsonPath jp = given().log().all().accept(ContentType.JSON).
                 and().pathParam("id",2).when().get("/student/{id}").then().extract().jsonPath();
